@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import SideButton from "./micro/side-button";
+import SideButton from "../micro-components/side-button";
 
 function Aside() {
   return (
@@ -7,11 +7,13 @@ function Aside() {
       <Link to="/">
         <SideButton name="Главное" id="main" />
       </Link>
+
       <Link to="/feed">
         <SideButton name="Новости" id="feed" />
       </Link>
+
       <Link to="/feedback">
-        <SideButton name="Жалобы" id="feedback" />
+        <SideButton name="Отзывы" id="feedback" />
       </Link>
     </aside>
   );

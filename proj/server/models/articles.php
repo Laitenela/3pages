@@ -4,17 +4,18 @@ class Articles_Model extends Db_Model
 {
   public function get_articles($start, $quantity)
   {
-    $data_articles = [];
-    $start--;
-    $request = "SELECT *"
-      . " FROM articles"
-      . " ORDER BY `date` DESC"
-      . " LIMIT $start, $quantity;";
+    $start   -= 1;
+    $articles = [];
 
-    $responce   = mysqli_query($this->db, $request);
+    $request  = "SELECT * ";
+    $request .= "FROM articles ";
+    $request .= "ORDER BY `date` DESC ";
+    $request .= "LIMIT $start, $quantity;";
+    $responce = mysqli_query($this->db, $request);
+
     while ($row = mysqli_fetch_assoc($responce))
-      array_push($data_articles, $row);
+      array_push($articles, $row);
 
-    return $data_articles;
+    return $articles;
   }
 }

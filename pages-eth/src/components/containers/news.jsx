@@ -1,10 +1,8 @@
-import Article from "./micro/article";
+import Article from "../micro-components/article";
 
 function News({ articles }) {
-
   return (
     <div className="news-block">
-      {(!articles.length) && "Загрузка.."}
       {articles.map((data) => (
         <Article
           id={data.id}

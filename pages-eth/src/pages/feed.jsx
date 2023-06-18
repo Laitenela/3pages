@@ -1,16 +1,12 @@
 import { useState, useEffect } from "react";
-import FeedContainer from "../feedContainer";
+import FeedContainer from "../components/containers/feedContainer";
 
-function Feed() {
+function Feed({ fetchArticles }) {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
-    fetch("/api/articles/?start=1&quantity=5").then((resolve) => {
-      resolve.json().then((response) => {
-        setArticles(response);
-      });
-    });
-  }, []);
+    fetchArticles(1, 5, setArticles);
+  }, [fetchArticles]);
 
   return (
     <main className="feed">

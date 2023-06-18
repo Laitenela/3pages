@@ -1,4 +1,4 @@
-import Article from "./micro/article";
+import Article from "../micro-components/article";
 
 function FeedContainer({articles}) {
   return (

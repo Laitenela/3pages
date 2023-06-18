@@ -1,4 +1,5 @@
 function Article({id, heading, content, date}) {
+  date = date.slice(0, 10);
   return (
     <a className="article" href={id}>
       <div className="article-container">
